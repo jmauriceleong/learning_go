@@ -60,11 +60,15 @@ func main(){
 	d.emp.LastName = "Ashe"
 	d.HourlyRate = 40
 	
-	var m = Monday
-	var w = Tuesday
-	d.LogHours(m, 10)
-	d.LogHours(w, 12)
-	fmt.Printf("Hours worked on %s: %d\n", m.day(int(m)), d.Workweek[m])
-	fmt.Printf("Hours worked on %s: %d\n", w.day(int(w)), d.Workweek[w])
+	// var m = Monday
+	// var w = Tuesday
+	d.LogHours(Monday, 10)
+	d.LogHours(Tuesday, 12)
+	d.LogHours(Wednesday, 12)
+	d.LogHours(Thursday, 12)
+	d.LogHours(Friday, 12)
+	fmt.Printf("Hours worked on %s: %d\n", Monday.day(int(Monday)), d.Workweek[Monday])
+	fmt.Printf("Hours worked on %s: %d\n", Tuesday.day(int(Tuesday)), d.Workweek[Tuesday])
 	fmt.Printf("Total hours for employee %s %s is : %d\n", d.emp.FirstName, d.emp.LastName, d.HoursWorked())
+	fmt.Printf("Total weekly wages for employee %s %s is : %d\n", d.emp.FirstName, d.emp.LastName, d.HoursWorked()*d.HourlyRate)
 }
